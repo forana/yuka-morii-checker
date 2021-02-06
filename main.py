@@ -67,5 +67,6 @@ def send_email(message: str):
 if __name__ == "__main__":
     cards = scrape_cards()
     new_cards = filter_new_cards(cards)
-    send_email(email_message(cards))
-    save_cards(new_cards)
+    if len(new_cards) > 0:
+        send_email(email_message(cards))
+        save_cards(new_cards)
