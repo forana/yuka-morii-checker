@@ -35,7 +35,7 @@ def filter_new_cards(cards: List[Tuple[str, str]]) -> List[Tuple[str, str]]:
         if r.get(title) is None:
             # print(f" -> Found new: {title}")
             new_cards.append((title, url))
-    return cards
+    return new_cards
 
 
 def save_cards(cards: List[Tuple[str, str]]):
