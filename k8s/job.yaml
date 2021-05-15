@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: checker
+  namespace: ymc
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: checker
+            image: forana/ymc:latest
+            imagePullPolicy: Always
+            envFrom:
+            - secretRef:
+                name: config
+          restartPolicy: Never
+      backoffLimit: 4

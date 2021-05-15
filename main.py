@@ -33,8 +33,10 @@ def filter_new_cards(cards: List[Tuple[str, str]]) -> List[Tuple[str, str]]:
     new_cards = []
     for title, url in cards:
         if r.get(title) is None:
-            # print(f" -> Found new: {title}")
+            print(f" -> Found new: {title}")
             new_cards.append((title, url))
+        else:
+            print(f" -> Already known: {title}")
     return new_cards
 
 
