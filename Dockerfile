@@ -4,4 +4,4 @@ RUN pip install pipenv
 COPY main.py Pipfile Pipfile.lock ./
 RUN pipenv install
 
-CMD python main.py
+CMD pipenv run python main.py
