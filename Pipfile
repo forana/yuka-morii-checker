@@ -6,7 +6,7 @@ verify_ssl = true
 [packages]
 requests = "*"
 bs4 = "*"
-redis = "*"
+pymongo = {extras = ["srv", "tls"], version = "*"}
 
 [requires]
 python_version = "3.8"
